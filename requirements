@@ -1,0 +1,16 @@
+# --- Web API (Ton pôle) ---
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+
+# --- Data Handling (Pôle Data) ---
+pandas==2.2.0
+numpy==1.26.3
+
+# --- NLP & Embeddings (Pôle NLP) ---
+
+
+# --- Optimization & Search (Pôle Algo) ---
+
+
+# --- Utilities ---
