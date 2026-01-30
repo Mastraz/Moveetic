@@ -8,7 +8,7 @@ Pour garantir le bon fonctionnement du projet, suivez scrupuleusement les étape
 ```Bash
 # Cloner le projet
 git clone https://github.com/Mastraz/Moveetic.git
-cd Projet_Python
+cd Moveetic
 ```
 
 2. Installation des dépendances
