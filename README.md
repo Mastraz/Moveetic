@@ -14,6 +14,12 @@ Mooveetic is an intelligent movie recommendation engine that uses Natural Langua
 -  API: A clean and documented FastAPI interface allowing real-time movie analysis and recommendation display.
 
 
+### General System Schema:
+
+ <img width="776" height="236" alt="Capture d’écran 2026-02-04 091744" src="https://github.com/user-attachments/assets/8419e908-0e69-4933-a08a-ee3f05b51421" />
+
+
+
 ## 💽 2) Setup Tutorial
 To ensure the project runs smoothly, please follow the steps below.
 
