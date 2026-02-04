@@ -1,5 +1,6 @@
 # 🎬💙 Moveetic ! Movies Recommandation 
 *Master 1, ISEN, January to February 2026, Teacher: Cyril Barrelet*
+
 Analyzing movie synopses based on user input,
 Using : NLP (BERT), Cosine Similarity and an API interface (FastAPI).
 
