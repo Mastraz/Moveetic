@@ -1,57 +1,58 @@
-# 🎬 Mooveetic : Moteur de Recommandation de Films (TMDB)
-Projet d'analyse sémantique de synopsis utilisant le NLP (BERT), la similarité vectorielle et une architecture API (FastAPI). Ce moteur ne se contente pas de chercher des mots-clés : il comprend le sens des histoires pour suggérer des films thématiquement proches.
+# 🎬💙 Moveetic ! Movies Recommandation 
+*Master 1, ISEN, January to February 2026, Teacher: Cyril Barrelet*
+Analyzing movie synopses based on user input,
+Using : NLP (BERT), Cosine Similarity and an API interface (FastAPI).
 
-## 🛠️ Installation et Configuration
-Pour garantir le bon fonctionnement du projet, suivez scrupuleusement les étapes ci-dessous.
+## 💽 Setup Tutorial
+To ensure the project runs smoothly, please follow the steps below.
 
-### Option 1 : Via Conda (Recommandé)
-C'est la méthode la plus sûre pour gérer les versions de Python et les bibliothèques de Data Science.
+### Option 1 : Conda
 
 ```Bash
-# 1. Cloner le projet
+# 1. Clone the project
 git clone https://github.com/Mastraz/Moveetic.git
 cd Moveetic
 
-# 2. Créer l'environnement à partir du fichier yml
+# 2. Create the environment from the yml file
 conda env create -f environment.yml
 
-# 3. Activer l'environnement
+# 3. Activate the environment
 conda activate Moveetic_env
 ```
 
-### Option 2 : Via Pip
-Si vous n'utilisez pas Conda, assurez-vous d'avoir Python 3.12 installé.
+### Option 2 : Pip
+Not using Conda ? Make sure you have Python 3.12 installed.
 
 ```Bash
-# 1. Cloner le projet
+# 1. Clone the project
 git clone https://github.com/Mastraz/Moveetic.git
 cd Moveetic
 
-# 2. Installer les dépendances
+# 2. Download dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-## 🚀 Utilisation
-Le projet est conçu pour être entièrement automatisé. Au premier lancement, il s'occupera de nettoyer les données et de générer les vecteurs mathématiques (Embeddings).
+## 🚀 Using
+The project is fully automated. At the first launch, it will clean the data and generate the mathematical vectors (Embeddings).
 
-Démarrage du serveur
-Lancez l'API avec Uvicorn :
+Starting the server 
+Launch the API with Uvicorn :
 
 ```Bash
 python main.py
 ```
-Le serveur sera accessible sur : http://127.0.0.1:8000
+The server will be accessible at : http://127.0.0.1:8000
 ---
-# Tester l'API
+# API test
 
-Le moyen le plus simple est d'utiliser l'interface interactive Swagger intégrée :
+The easiest way is to use the built-in Swagger interface : 
 
-Ouvrez votre navigateur sur http://127.0.0.1:8000/docs.
+Open your browser on : http://127.0.0.1:8000/docs.
 
-Déroulez la route GET /analyze.
+Unfold the GET/analyze route.
 
-Cliquez sur "Try it out".
+Click on "Try it out".
 
-Entrez un titre et un synopsis (ex: un film de braquage dans l'espace).
+Enter a title and a text (ex: a heist movie in space with dogs).
 
-Cliquez sur Execute pour voir les 3 meilleures recommandations de la base TMDB.
+Click on Execute to see the 3 best recommendations from the TMDB database.
