@@ -5,9 +5,6 @@ import os
 
 import pandas as pd
 
-# ==========================================
-# VERSION FINALE : CLASS (POO)
-# ==========================================
 
 class MovieCleaner:
     """
