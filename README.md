@@ -4,17 +4,31 @@ Projet d'analyse sémantique de synopsis utilisant le NLP (BERT), la similarité
 ## 🛠️ Installation et Configuration
 Pour garantir le bon fonctionnement du projet, suivez scrupuleusement les étapes ci-dessous.
 
-1. Clonage et Environnement
+### Option 1 : Via Conda (Recommandé)
+C'est la méthode la plus sûre pour gérer les versions de Python et les bibliothèques de Data Science.
+
 ```Bash
-# Cloner le projet
+# 1. Cloner le projet
 git clone https://github.com/Mastraz/Moveetic.git
 cd Projet_Python
+
+# 2. Créer l'environnement à partir du fichier yml
+conda env create -f environment.yml
+
+# 3. Activer l'environnement
+conda activate Moveetic_env
 ```
 
-2. Installation des dépendances
-Installez toutes les bibliothèques nécessaires avec une seule commande :
+### Option 2 : Via Pip
+Si vous n'utilisez pas Conda, assurez-vous d'avoir Python 3.12 installé.
 
 ```Bash
+# 1. Cloner le projet
+git clone https://github.com/Mastraz/Moveetic.git
+cd Projet_Python
+
+# 2. Installer les dépendances
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 ## 🚀 Utilisation

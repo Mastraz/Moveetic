@@ -1,16 +1,17 @@
-# --- Web API (Ton pôle) ---
+# --- Web API ---
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
 pydantic==2.5.3
+watchfiles  # Nécessaire pour le mode --reload
 
-# --- Data Handling (Pôle Data) ---
+# --- Data Handling ---
 pandas==2.2.0
 numpy==1.26.3
+pyarrow     #gestion efficace du CSV
 
-# --- NLP & Embeddings (Pôle NLP) ---
+# --- NLP & Embeddings ---
 sentence-transformers==3.3.1
+torch       # Moteur indispensable pour faire tourner le modèle BERT
 
-# --- Optimization & Search (Pôle Algo) ---
-
-
-# --- Utilities ---
+# --- Optimization & Search ---
+scikit-learn==1.4.0  # Indispensable pour la fonction cosine_similarity

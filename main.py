@@ -11,6 +11,7 @@ app = FastAPI(title="API Cinéma - Version Simple")
 cleaner = MovieCleaner()
 encoder = MovieEncoder()
 searcher = MovieSearcher()
+
 # --- ETAPE 1 : Vectorisation de la base globale (au démarrage) ---
 # On le fait une fois pour avoir le fichier .npy global
 if not os.path.exists('synopsis_embeddings.npy'):
