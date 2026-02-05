@@ -283,7 +283,7 @@ Benefits : No command-line usage is needed, and documentation is accessible in r
 <img width="533" height="350" alt="1" src="https://github.com/user-attachments/assets/9e66523e-94db-45ea-9012-39cca2d91b42" />
 
 
-## Example to Copy/past 
+### Example to Copy/past 
 Title: Thor: The Dark World ; 
 Synopsis : Thor fights to restore order across the cosmos… but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.
 
@@ -296,7 +296,7 @@ Option B : URL calling (HTTP request)
 Allows Moveetic’s integration into any application (website/ mobile app).
 Request : 
 ‘’’Bash
-# Example, terminal tool
+### Example, terminal tool
 http://127.0.0.1:8000/analyze?title=Inception&synopsis=A+thief+who+enters+the+dreams+of+others.
 ‘’’
 
