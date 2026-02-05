@@ -86,11 +86,11 @@ Dataset TMDB link : TMDB 5000 Movie Dataset
 This feature is a crucial first step. It transforms the raw TMDB dataset into a structured format that is optimized for BERT and the API. 
 
 ### Main functionalities:
-***Automation: load, clean and save data at once, using MovieCleaner (OO) class.
-***Parsing JSON : transforms complex JSON strings into readable text lists.
+- Automation: load, clean and save data at once, using MovieCleaner (OO) class.
+- Parsing JSON : transforms complex JSON strings into readable text lists.
 e.g: '[{"id": 28, "name": "Action"}]' -> 'Action, Adventure'
-***Missing values : deletes any row missing key information to prevent future failures/
-***Export production : generate the file "movies_cleaned.csv" 
+- Missing values : deletes any row missing key information to prevent future failures/
+- Export production : generate the file "movies_cleaned.csv" 
 
 ### Rows selection strategy: 
 Reduce the size of the dataset to increase computing power, from 19 rows to 6.
