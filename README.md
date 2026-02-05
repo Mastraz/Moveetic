@@ -188,3 +188,70 @@ Vectorizing: 'A space pirate fighting aliens in a galaxy far away.'...
 First 5 numerical values of the vector: 
 [-0.04049212  0.13097127 -0.04528323 -0.02100811 -0.06861791]
 
+
+
+## C) Recommendation
+This feature compares the distance between the vectors table and the user text. All the tables are numpy.
+
+### Main functionalities : 
+- Similarity computing: for each movie we calculate the Cosine Similarity between this movie vector and the user text vector. 
+The result is among 1 and -1.
+		    1 Perfect match |-1 Perfect mismatch | 0 No correlation
+
+
+- Retrieving movie information:
+Since the movie array and the vector array have the same length, we can retrieve each movie’s info (titles, type) by comparing their corresponding positions.
+
+```Bash
+titre = df.iloc[i]["title"]  #iloc => lines searching (pandas)
+```
+
+***Top 3 movie selection :The list of movies with their similarity scores is filtered in descending order, allowing us to obtain the “Top Movie Recommendations” table.
+
+```Bash
+best_similarite_films.sort(key=lambda x:x[2], reverse=True) #tri ordre décroissant "2" place du score
+top = best_similarite_films[:3] #on affiche les deux meilleurs films
+```
+
+### Run test : 
+
+```Bash
+import numpy as np
+import pandas as pd
+
+
+
+
+#dataset & files
+df = pd.read_csv('movies_cleaned.csv')
+films_vecteurs = np.load("synopsis_embeddings.npy")
+
+
+#SIMULATION
+utilisateur_vecteur = np.random.rand(films_vecteurs.shape[1]).astype('float32')
+
+
+best_similarite_films= [] #va contenir le titre et le score synopsis
+
+
+similarites = []
+
+
+for i in range(len(films_vecteurs)):
+    score = np.dot(utilisateur_vecteur, films_vecteurs[i]) / (np.linalg.norm(utilisateur_vecteur) * np.linalg.norm(films_vecteurs[i]))
+    similarites.append(score)
+    titre = df.iloc[i]["title"]  #iloc => recherche de la ligne dans l'index (pandas)
+    genre = df.iloc[i]["genres"]
+    best_similarite_films.append((titre, genre, float(score)))
+
+
+best_similarite_films.sort(key=lambda x:x[2], reverse=True) #tri ordre décroissant "2" place du score
+top = best_similarite_films[:3] #on affiche les deux meilleurs films
+print("Top 3 recommandations :")
+for film in top:
+    print(film[0], ":", film[1], film[2])
+
+```
+
+
+
