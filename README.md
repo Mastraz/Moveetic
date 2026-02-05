@@ -69,8 +69,51 @@ Open your browser on : http://127.0.0.1:8000/docs.
 
 Unfold the GET/analyze route.
 
-Click on "Try it out".
-
 Enter a title and a text (ex: a heist movie in space with dogs).
 
 Click on Execute to see the 3 best recommendations from the TMDB database.
+
+Click on "Try it out".
+
+
+
+## 🧩 2) Features
+
+## A) Data Cleaning
+### Data Cleaning
+Dataset TMDB link : TMDB 5000 Movie Dataset
+
+This feature is a crucial first step. It transforms the raw TMDB dataset into a structured format that is optimized for BERT and the API. 
+
+### Main functionalities:
+***Automation: load, clean and save data at once, using MovieCleaner (OO) class.
+***Parsing JSON : transforms complex JSON strings into readable text lists.
+e.g: '[{"id": 28, "name": "Action"}]' -> 'Action, Adventure'
+***Missing values : deletes any row missing key information to prevent future failures/
+***Export production : generate the file "movies_cleaned.csv" 
+
+### Rows selection strategy: 
+Reduce the size of the dataset to increase computing power, from 19 rows to 6.
+
+Explanation for each column kept:
+
+| Colonne | Pertinence pour le projet |
+| :--- | :--- |
+| **id** | **Technical Key:** Essential for linking results to the TMDB API. |
+| **title** | **User Interface:** To display the results in a clear way. |
+| **overview** | **NLP Core:** Contains the synopses used by our BERT model. |
+| **genres** | **Filtering:** Used to create category-based filters (e.g, "Show only Action movies") and refine the score. |
+| **vote_average** | **Quality Control:** Can display the vote average of the movie |
+| **release_date** | **Temporal Filtering:** Enables recommendations based on time periods (e.g., "Movies from the 1990s"). |
+
+### Run test
+The module is built using an Object-Oriented (OO) approach to ensure easy integration.
+
+```Bash
+from clean_data import MovieCleaner
+
+#Pipeline initialization and launch
+cleaner = MovieCleaner()
+cleaner.run_pipeline()
+```
+Result : 'movies_cleaned.csv'
