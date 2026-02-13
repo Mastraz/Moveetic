@@ -341,7 +341,7 @@ This graphic shows how the synopses are correlated, and the two colors are mixed
 
 
 
-## 4) 🎥 Relevant visualization
+## 🎥 4) Relevant visualization
 ### Execution time
 => Vectorisation: 
 
