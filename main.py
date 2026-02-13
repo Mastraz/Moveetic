@@ -4,17 +4,19 @@ import pandas as pd
 import uvicorn
 from fastapi import FastAPI
 
-from movie_cleaner import MovieCleaner
-from movie_encoder import MovieEncoder
-from movie_searcher import MovieSearcher
+from src.movie_cleaner import MovieCleaner
+from src.movie_encoder import MovieEncoder
+from src.movie_searcher import MovieSearcher
 
 
 # --- INITIALISATION DE L'API ---
 app = FastAPI(
-    title="Mooveetic API",
+    title="Moveetic API",
     description="Moteur de recommandation basé sur la similarité sémantique."
 )
-
+# Utilisation des chemins relatifs vers le dossier /data
+CLEANED_CSV = "data/movies_cleaned.csv"
+EMBEDDINGS_NPY = "data/synopsis_embeddings.npy"
 # Instanciation des composants de traitement
 cleaner = MovieCleaner()
 encoder = MovieEncoder()
@@ -22,17 +24,17 @@ encoder = MovieEncoder()
 # --- PRÉPARATION DES DONNÉES (PIPELINE) ---
 
 # Étape 1 : Nettoyage du dataset si le fichier propre n'existe pas
-if not os.path.exists('movies_cleaned.csv'):
+if not os.path.exists(CLEANED_CSV):
     cleaner.run_pipeline()
 
 # Étape 2 : Vectorisation de la base si les embeddings sont manquants
-if not os.path.exists('synopsis_embeddings.npy'):
+if not os.path.exists(EMBEDDINGS_NPY):
     print("[INIT] Première vectorisation de la base de données globale...")
-    encoder.vectorize_csv('movies_cleaned.csv', output_npy='synopsis_embeddings.npy')
+    encoder.vectorize_csv(CLEANED_CSV, output_npy=EMBEDDINGS_NPY)
 
 # Étape 3 : Chargement du moteur de recherche 
 # (Obligatoirement après les étapes 1 et 2)
-searcher = MovieSearcher()
+searcher = MovieSearcher(csv_path=CLEANED_CSV, npy_path=EMBEDDINGS_NPY)
 
 
 # --- ROUTES DE L'API ---
@@ -44,7 +46,7 @@ def analyze_movie(title: str, synopsis: str):
     Prend un titre et un synopsis en paramètres.
     """
     # 1. Création du fichier temporaire pour la vectorisation
-    temp_file = "temp_input.csv"
+    temp_file = "data/temp_input.csv"
     user_data = {"title": [title], "overview": [synopsis]}
     pd.DataFrame(user_data).to_csv(temp_file, index=False)
     

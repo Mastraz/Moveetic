@@ -12,8 +12,8 @@ class MovieSearcher:
     le sens sémantique est le plus proche du synopsis fourni.
     """
 
-    def __init__(self, csv_path: str = 'movies_cleaned.csv', 
-                 npy_path: str = 'synopsis_embeddings.npy'):
+    def __init__(self, csv_path: str = 'data/movies_cleaned.csv', 
+                 npy_path: str = 'data/synopsis_embeddings.npy'):
         """
         Initialisation du moteur de recherche.
         Charge le dataset nettoyé et la matrice de vecteurs en mémoire.

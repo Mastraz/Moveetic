@@ -12,8 +12,8 @@ class MovieCleaner:
     Elle gère les valeurs manquantes et transforme les chaînes JSON en texte lisible.
     """
 
-    def __init__(self, input_file="tmdb_5000_movies.csv", 
-                 output_file="movies_cleaned.csv"):
+    def __init__(self, input_file="data/tmdb_5000_movies.csv", 
+                 output_file="data/movies_cleaned.csv"):
         """Initialisation des chemins de fichiers et du DataFrame."""
         self.input_file = input_file
         self.output_file = output_file
