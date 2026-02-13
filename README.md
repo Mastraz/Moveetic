@@ -6,7 +6,7 @@ Using : NLP (BERT), Cosine Similarity and an API interface (FastAPI).
 
 
 ## 📖 1) Project Summary
-Mooveetic is an intelligent movie recommendation engine that uses Natural Language Processing (NLP) and Deep Learning. Our code can understand the meaning of movie plots to suggest films with similar themes and narratives.
+Moveetic is an intelligent movie recommendation engine that uses Natural Language Processing (NLP) and Deep Learning. Our code can understand the meaning of movie plots to suggest films with similar themes and narratives.
 
 The diagram below shows how our movie recommendation system based on embeddings works.
 
