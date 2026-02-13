@@ -284,18 +284,25 @@ The API is designed to be easy to use. Here’s how to start the server and make
 python main.py
 ```
 2. Make a request
+
 Option A : Interactive user interface (Swagger UI)
+
 This method is perfect to visualize and to compute and to run the program.
+
 Action : Launch the server http://127.0.0.1:8000/docs.
+
 How to use : Click on "Try it out", fill in title and synopsis, then click on "Execute".
+
 Benefits : No command-line usage is needed, and documentation is accessible in real time.
 
 <img width="533" height="350" alt="1" src="https://github.com/user-attachments/assets/9e66523e-94db-45ea-9012-39cca2d91b42" />
 
 
 ### Example to Copy/past 
-Title: Thor: The Dark World ; 
-Synopsis : Thor fights to restore order across the cosmos… but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.
+
+Title: "Thor: The Dark World" ; 
+
+Synopsis : "Thor fights to restore order across the cosmos… but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all."
 
 Result: 
 
@@ -303,6 +310,7 @@ Result:
 
 
 Option B : URL calling (HTTP request)
+
 Allows Moveetic’s integration into any application (website/ mobile app).
 Request : 
 ```Bash
